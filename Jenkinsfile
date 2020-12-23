@@ -8,6 +8,7 @@ node {
     // Start building the python env into the docker container....
     stage("Build Python") {
         try {
+            // Remove the old container if not running....
             bat 'docker container stop api'
             bat 'docker container rm api'
             bat 'docker image rm api'
