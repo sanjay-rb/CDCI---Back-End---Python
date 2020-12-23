@@ -24,6 +24,7 @@ node {
             // Start the server on 5000 port....
             bat 'docker run -d -p 5000:5000 --name api api'
         } catch (err) {
+            // Restart the server if it is running....
             bat 'docker container restart api'
         }
     }
